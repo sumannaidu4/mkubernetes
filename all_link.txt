@@ -1,0 +1,295 @@
+
+Kubernetes
+++++++++++++++++++
+https://transcripts.gotomeeting.com/#/s/90714a8593fbccbaffbe7a346d9e1720ea87dbd85cf713cd6445f5ce37759f21
+https://transcripts.gotomeeting.com/#/s/77a00f543fcafe0b672a7ec28a3b3deaa4f4d024d60b9f0362356564eeb6b44c
+https://transcripts.gotomeeting.com/#/s/7a87306960c615f95dcf40d4aa839a917da00ee631ec9163d69fac418fee222f
+https://transcripts.gotomeeting.com/#/s/a255323866bb28ae5c39464bf1b9115d82c08c2bbf023b4ce4df9c476ea98421
+https://transcripts.gotomeeting.com/#/s/16ea218238115c2ae8c2576b3e4122a43adda3ad58f79beb62a33baf25c4788c
+https://transcripts.gotomeeting.com/#/s/070f5553a7912f8277cf3d275c03f813094c4131a64482d38424674e80da585a
+https://transcripts.gotomeeting.com/#/s/0cf0d7d01b4f54825506646ad631bb523e3e5d671b5bf4265ce6085adfb7fed1
+https://transcripts.gotomeeting.com/#/s/7842a53abab5e7b06c97894a57276dcb62c1e8787dc89a41c21297e97c91abb1
+https://transcripts.gotomeeting.com/#/s/fbd21c0ab7d56bbd324f3b7c0765707cdd4c30493d5dad84c319a6d0625aa4dd
+https://transcripts.gotomeeting.com/#/s/563e5cf75ae70a35335fe0e9e8cea78c5f6f3fa1f3114eb0b6679691112a9191
+https://transcripts.gotomeeting.com/#/s/c328a6bb2c5a73995943d336a1515702386da29e8ca1a15e59995ab938462163
+https://transcripts.gotomeeting.com/#/s/ce4c6ee2f028f4a64c2a43b31b073e854e46d76fab25828bc1385b8c1ca03534
+https://transcripts.gotomeeting.com/#/s/ced153dbc90af106418648b6fa715dd6ecc7a51389cbff401927d81f106b9851
+https://transcripts.gotomeeting.com/#/s/7b9cfd58838110abdeb1cb3b6b04d98ebca471041ce1447401c3fde2e2c82c6b
+https://transcripts.gotomeeting.com/#/s/00993ca8c35d8877766b6bae90951b562fc88c92d0c18a55859a1c7b4e35b1ac
+https://transcripts.gotomeeting.com/#/s/bc60f13ca8a0d37be3034bbe6bdaeba7cdae532fe49d01b7af357835fcc186aa
+https://transcripts.gotomeeting.com/#/s/6a4f21a1316917117914b43faf268204e0160235e2cc914ab64dc95ff735087c
+https://transcripts.gotomeeting.com/#/s/c59df0d7ccf4dcdc4a19c1c4009c277e2c6c0ed9f5abe1e73aef44c71b553740
+https://transcripts.gotomeeting.com/#/s/365d73a3c143bfe3203d44ec87c7772cb8a0910551d71b131da00f7efb7c6a7e
+https://transcripts.gotomeeting.com/#/s/ec137ff3ce8aa7c12075ef9e02755bd32979e761dad37e84b24fb5c87b02ec89
+
+Docker
+++++++++++++
+https://transcripts.gotomeeting.com/#/s/7d44fda11325d51b4a51078a9e27c2c6163cada4123406c3846601b8b9c72963
+https://transcripts.gotomeeting.com/#/s/9929148f6b1f41e50a00c4d796e0c30ab77925a5b4710fb2aff3f8c5f6f6f43e
+https://transcripts.gotomeeting.com/#/s/77b59e174315d488a5a0e2af660bd009412e287d51b74ff8c59f03a8320b2a39
+
+https://transcripts.gotomeeting.com/#/s/70ec3f63a3766ad5f6e6ab70f51cb20789be7375f606a6164019e26aabe21355
+Balaji, 09:38
+
+Docker - 1 - 27th Sep 2021
+--------------------------
+
+https://transcripts.gotomeeting.com/#/s/9ef05a143e5926ce992869cc1e4ee58d948714a5abd3a9d01a5df1b906e93fd8
+
+Balaji, 10:42
+Docker - 2 - Sep 28th 2021
+--------------------------
+
+https://transcripts.gotomeeting.com/#/s/2055da63dfc7ac838d47685a1884e581e15776663c1c77ab4347bc2ad264841d
+
+
+Balaji, 11:24
+
+Docker - 3 - Sep 29th 2021
+--------------------------
+
+https://transcripts.gotomeeting.com/#/s/0b7808e90aaffff8f1fa18546b89b47c137f8313eb19814cb5d262c2598ccca0
+
+Balaji, 11:15
+Docker - 4 - 30th Sep 2021
+---------------------------
+
+https://transcripts.gotomeeting.com/#/s/8a449ae7618143e88c0b0ab9f628536b8a4103e104df8e02d5b0b1532664e96d
+
+
+Balaji, 10:59
+Docker - 5 - Oct 1st 2021
+-------------------------
+
+https://transcripts.gotomeeting.com/#/s/a2a86afab8aa36cf1563f33e862e849effb75078041f6aab0bba7f7288b67f2f
+
+Balaji, 09:58
+Docker - 6 - Oct 4th 2021
+=========================
+
+https://transcripts.gotomeeting.com/#/s/a282701a7b4e1c6aca8ac3313007f4296680f9ac9ecee1c190948469bd52ece3
+
+Balaji, 10:13
+Docker - 7 - Oct 5th 2021
+--------------------------
+
+https://transcripts.gotomeeting.com/#/s/30bd1cef73bafccff1a3183df9f48aade19b2f62417d3b437ab2c72cfc164af7
+
+Balaji, 09:53
+Docker 8 - Oct 6th 2021
+=======================
+  
+https://transcripts.gotomeeting.com/#/s/af3b5d46cce3b98f779f6717d2d7a6334f1d4186720378da0bac266c31a7d280
+
+
+Balaji, 12:28
+Docker - 9 - Oct 7th 2021
+============================
+
+https://transcripts.gotomeeting.com/#/s/aa56495cc8c80b34f27a33df64d73ee3802938828c5b0e3208233b7e66ce2142
+
+Balaji, 09:31
+Docker - 10 - Oct 8th 2021
+--------------------------
+
+https://transcripts.gotomeeting.com/#/s/f21b3d39eda8da1b09e9effa4921cf189f27f38c34d98bb4459747508d065b09
+
+Balaji, 10:57
+Docker - 11 - Oct 9th 2021
+--------------------------
+
+https://transcripts.gotomeeting.com/#/s/39438febf0163f19975b2cc5160c4cfdc4f394f8afb2ded7051bb3e1041f7e2f
+
+
+WS - 1 - Sep 14th 2021
+-----------------------
+
+https://transcripts.gotomeeting.com/#/s/90f95af143af1cd1ce9b42220bacc7bd154a3265efa843492e0d66dc767bb166
+
+
+Balaji, 10:44
+AWS - 2 - Sep 15th 2021
+-----------------------
+
+https://transcripts.gotomeeting.com/#/s/80d25ebcddb697ef912229311813c0743a5b413d1655539e1623bff491bda726
+
+
+Balaji, 09:54
+AWS - 3 - Sep 16th 2021
+------------------------
+
+https://transcripts.gotomeeting.com/#/s/fbd91e702aa121d649a66ab122c801059a9e76b00e3583149779db2599339f94
+
+Balaji, 11:29
+
+
+AWS - 4 - Sep 17th 2021
+-----------------------
+
+https://transcripts.gotomeeting.com/#/s/55de80249b1359dc35bea3a1adcc642088828b4a2a9baa9b8a4908a7a852a452
+
+Balaji, 11:30
+
+
+AWS - 4 - Sep 17th 2021
+-----------------------
+
+https://transcripts.gotomeeting.com/#/s/55de80249b1359dc35bea3a1adcc642088828b4a2a9baa9b8a4908a7a852a452
+
+
+Balaji, 12:00
+AWS - 5 - Sep 18th 2021
+------------------------
+
+https://transcripts.gotomeeting.com/#/s/def734b4641f9ab76baa0d1e4895e26d08421c63a76853f361a5e2ec9de9000d
+
+Balaji, 11:26
+AWS - 6 - Sep 20th 2021
+-----------------------
+
+https://transcripts.gotomeeting.com/#/s/e209cfc4e13f6a73b2c7b4a6eae9bdbfcee46b9f3074864f3a63d8433ec2f0f2
+
+Balaji, 12:05
+AWS 7 - Sep 21st 2021
+----------------------
+
+https://transcripts.gotomeeting.com/#/s/275c3a827ad73a15acfd0949e61d43cf376ab4105b8ffb38cd8241d4c06f6fa9
+
+
+
+Balaji, 10:37
+AWS - 8 - Sep 22nd 2021
+------------------------
+https://transcripts.gotomeeting.com/#/s/c7c38a90831d2938199f7860937d676af61afc70fb19e85cc24fef175105a841
+
+Balaji, 12:02
+AWS - 9 - Sep 23rd 2021
+-----------------------
+
+https://transcripts.gotomeeting.com/#/s/2b5ea8fa25d20cb9ed9d163e5b0be7d791d1ca58dec651e2a471ae8ee533432e
+
+Balaji, 11:56
+AWS - 10 - Sep 24th 2021
+------------------------
+https://transcripts.gotomeeting.com/#/s/f884b276c6506375035c043e991ba80a68036d3bf2b30978e08414b997fe60b6
+
+Balaji, 11:47
+AWS - 11 - Sep 25th 2021
+------------------------
+https://transcripts.gotomeeting.com/#/s/b72f261f3603631a500ce24483a8999603622e3e88a1d312c391b402beec16e0
+
+
+
+
+
+teraform:
+https://transcripts.gotomeeting.com/#/s/738083a9463040edb9e4daf1a6a4c5483c5817b0dd156887fff47b229f61f3e4
+Terraform 2
+https://transcripts.gotomeeting.com/#/s/a19e7848cc761f1324581c21c406d784c26ba043289c4c69e0053b0ac6b043f3
+Terraform 3:
+https://transcripts.gotomeeting.com/#/s/a1ccc9366f874738392c272ae36379d2d4e782c4067a79d3fe4242de1d061845
+
+
+Jenkins -1
+----------
+https://transcripts.gotomeeting.com/#/s/3f0d1760db9fb40b4b536781d47453ea85d93a3ed4e6395142595a04456e709a
+Jenkins 2
+----------
+https://transcripts.gotomeeting.com/#/s/23de2f556ed06fb7a76ed7bbbf00e1d0a8eaecbd7b1762a9efcf625b7c93fa53
+Jenkins Session -3
+------------------
+https://transcripts.gotomeeting.com/#/s/204aed34a94cabd7099fe420cedb1d9ce716226eae3f64e1743a3d3c0ea2647a
+Jenkins - 4
+-----------
+https://transcripts.gotomeeting.com/#/s/a0b2bb86289d6c3fd967d8209223608e6e6546c643d277453231861b0b3dca70
+Jenkins - 5
+-----------
+https://transcripts.gotomeeting.com/#/s/14215b7ba282b5a877e1561387dfd20a4fa4564681d578933c04a3cdc7f03023
+Jenkins - 6
+-----------
+https://transcripts.gotomeeting.com/#/s/f7b19547fab43ddd1780b86a858dad6f53d05682d317db8c61b240dd24aabf69
+Jenkins - 7
+------------
+https://transcripts.gotomeeting.com/#/s/abbe9059f28ca770d4df6f77010011f616294d26a236f6923d106c8fbc790f4c
+Jenkins - 8
+-----------
+https://transcripts.gotomeeting.com/#/s/998cce5f3f1b62983ef455276618828b3e19359ce19faa154eceda4e91b3b7db
+Jenkins -9
+----------
+https://transcripts.gotomeeting.com/#/s/f9441d7882cff8259bca1878521fe6a208835899de4603f5e1798ab46ad7f167
+Jenkins - 10
+------------
+https://transcripts.gotomeeting.com/#/s/e997811491208a121d91fd4fac350b3e49f78f7121edee4769c64ef7d21b622d
+Jenkins -11
+-----------
+https://transcripts.gotomeeting.com/#/s/218a536fc18a4bd82866247fcfaeb1dbed39ab7365730a6e5df208c21035351f
+Resume Preparation
+------------------
+https://transcripts.gotomeeting.com/#/s/970bb2599cc9d18129fb192e9255185c7441bc5a391383c90d7ded479d84603f
+Terraform -1
+------------
+https://transcripts.gotomeeting.com/#/s/738083a9463040edb9e4daf1a6a4c5483c5817b0dd156887fff47b229f61f3e4
+Terraform -2
+------------
+https://transcripts.gotomeeting.com/#/s/a19e7848cc761f1324581c21c406d784c26ba043289c4c69e0053b0ac6b043f3
+Terraform -3
+-------------
+https://transcripts.gotomeeting.com/#/s/a1ccc9366f874738392c272ae36379d2d4e782c4067a79d3fe4242de1d061845
+
+
+++++++++++++++++++++++++++++++++++++++++
+NEXUS
++++++++++++++
+https://transcripts.gotomeeting.com/#/s/b2bd17aa7c364ec5e0db17d7357d5df65abcb7ed9829ea12f68bb6e67d94584f
+https://transcripts.gotomeeting.com/#/s/688b0c0b0c0f1382b55842c23c4c8e5447e0053ebfceb89b695ba8a1af924d43
+https://transcripts.gotomeeting.com/#/s/24feca6ae08c1848511f0af0aa509458c9d57267b0f7b6f65b5323a44552f358
+
+Shell Scripting
+---------------
+https://transcripts.gotomeeting.com/#/s/e32802204615fe451743c7422f36af05b45443f8c7d4dc1b129a6a72de1f0bbc
+https://transcripts.gotomeeting.com/#/s/7a98bfef58039f07ae1c7a52e03e75260675d530e7beb6458b4c14e68d611a79
+https://transcripts.gotomeeting.com/#/s/70026ced7aaf43c3c151f173b651056ee15ddb141de3f4a057107557a353ad13
+https://transcripts.gotomeeting.com/#/s/8fca4fc7b57e2b5b67f740d4e5729d8bf1e8874d16ed78d825762025332adca8
+https://transcripts.gotomeeting.com/#/s/3e831d464f37f164cfb23376ccc996fe7c3643cbd27e01aa203ca8695ccd55f3
+
+
+http://mithuntechnologies.com/devopsmss/July10thbatch2021/linux-session-day1.html 
+
+Linux
+------
+
+Day1
+-----
+https://transcripts.gotomeeting.com/#/s/c67e9bc2321cf8ff096a91636925c0088e34b8a50cae8b2dead1e006903146b5
+
+Day 2
+------
+https://transcripts.gotomeeting.com/#/s/26e98c3ebaa690a34ce0f591ed86c9f7755d8083d206ac6856b5950d1004a4aa
+
+Day3
+-----
+https://transcripts.gotomeeting.com/#/s/362af83dbe6a0ebc9b63db9ac8294e358f8bd62b5a124e8ba5513f3913a82cfc
+
+Day4
+-----
+https://transcripts.gotomeeting.com/#/s/fc8396f34ab95a1e97b5794fa06740b753f5b349061b084b98868ba267a0b46d
+
+Day5
+-----
+https://transcripts.gotomeeting.com/#/s/ec8e7491ed4db9dc8a64bf25420062f92786b9347f4bea3bae809abc3afdc0d8
+
+Day6
+-----
+https://transcripts.gotomeeting.com/#/s/ca56c9a5df9a2a44886a9d77966e84b775317b92c0159dbf011ad2e77d808ae2
+
+Day7
+----
+https://transcripts.gotomeeting.com/#/s/7c6874e46497963467a32c198181628fae9c8b391411f0d69cbbb0d2fbf7301a
+
+Day8
+----
+https://transcripts.gotomeeting.com/#/s/00d4bdcd6a23f76b695d9de843c7e71884dd91765e51903212fd871b0c445477
+
+Day9
+-----
+https://transcripts.gotomeeting.com/#/s/8f0acec6747fde0a3c9eee0b3d0465c170724b8dc4f23759bb902a07d3e7bbba

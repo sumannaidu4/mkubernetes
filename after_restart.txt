@@ -1,0 +1,5 @@
+
+systemctl restart containerd
+systemctl daemon-reload
+systemctl start kubelet
+systemctl enable kubelet.service

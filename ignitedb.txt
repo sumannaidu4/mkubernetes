@@ -1,0 +1,629 @@
+bash-4.4# ./sqlline.sh --verbose=true -u jdbc:ignite:thin://127.0.0.1/
+issuing: !connect "jdbc:ignite:thin://127.0.0.1/"
+Connecting to jdbc:ignite:thin://127.0.0.1/
+Enter username for jdbc:ignite:thin://127.0.0.1/: ignite
+Enter password for jdbc:ignite:thin://127.0.0.1/: ******
+Connected to: Apache Ignite (version 2.11.0#20210911-sha1:8f3f07d3)
+Driver: Apache Ignite Thin JDBC Driver (version 2.11.0#20210911-sha1:8f3f07d3)
+Autocommit status: true
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+sqlline version 1.9.0
+0: jdbc:ignite:thin://127.0.0.1/>
+0: jdbc:ignite:thin://127.0.0.1/> !tables
++-----------+-------------+-----------------------------+------------+---------+----------+------------+-----------+---------------------------+----------------+
+| TABLE_CAT | TABLE_SCHEM |         TABLE_NAME          | TABLE_TYPE | REMARKS | TYPE_CAT | TYPE_SCHEM | TYPE_NAME | SELF_REFERENCING_COL_NAME | REF_GENERATION |
++-----------+-------------+-----------------------------+------------+---------+----------+------------+-----------+---------------------------+----------------+
+| IGNITE    | SYS         | BASELINE_NODES              | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | BASELINE_NODE_ATTRIBUTES    | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | BINARY_METADATA             | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | CACHES                      | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | CACHE_GROUPS                | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | CACHE_GROUP_PAGE_LISTS      | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | CLIENT_CONNECTIONS          | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | DATASTREAM_THREADPOOL_QUEUE | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | DATA_REGION_PAGE_LISTS      | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | DISTRIBUTED_METASTORAGE     | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | DS_ATOMICLONGS              | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | DS_ATOMICREFERENCES         | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | DS_ATOMICSEQUENCES          | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | DS_ATOMICSTAMPED            | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | DS_COUNTDOWNLATCHES         | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | DS_QUEUES                   | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | DS_REENTRANTLOCKS           | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | DS_SEMAPHORES               | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | DS_SETS                     | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | INDEXES                     | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | JOBS                        | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | LOCAL_CACHE_GROUPS_IO       | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | METRICS                     | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | NODES                       | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | NODE_ATTRIBUTES             | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | NODE_METRICS                | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | PARTITION_STATES            | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | SCAN_QUERIES                | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | SCHEMAS                     | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | SERVICES                    | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | SQL_QUERIES                 | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | SQL_QUERIES_HISTORY         | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | STRIPED_THREADPOOL_QUEUE    | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | TABLES                      | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | TABLE_COLUMNS               | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | TASKS                       | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | TRANSACTIONS                | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | VIEWS                       | VIEW       |         |          |            |           |                           |                |
+| IGNITE    | SYS         | VIEW_COLUMNS                | VIEW       |         |          |            |           |                           |                |
++-----------+-------------+-----------------------------+------------+---------+----------+------------+-----------+---------------------------+----------------+
+0: jdbc:ignite:thin://127.0.0.1/> !indexs
+Unknown command: indexs
+0: jdbc:ignite:thin://127.0.0.1/> !indexes
++-----------+-------------+------------+------------+-----------------+------------+------+------------------+-------------+-------------+-------------+-------+--+
+| TABLE_CAT | TABLE_SCHEM | TABLE_NAME | NON_UNIQUE | INDEX_QUALIFIER | INDEX_NAME | TYPE | ORDINAL_POSITION | COLUMN_NAME | ASC_OR_DESC | CARDINALITY | PAGES |  |
++-----------+-------------+------------+------------+-----------------+------------+------+------------------+-------------+-------------+-------------+-------+--+
++-----------+-------------+------------+------------+-----------------+------------+------+------------------+-------------+-------------+-------------+-------+--+
+0: jdbc:ignite:thin://127.0.0.1/>
+0: jdbc:ignite:thin://127.0.0.1/>
+0: jdbc:ignite:thin://127.0.0.1/> !columns
++-----------+-------------+-----------------------------+------------------------------------+-----------+-----------+-------------+---------------+--------------+
+| TABLE_CAT | TABLE_SCHEM |         TABLE_NAME          |            COLUMN_NAME             | DATA_TYPE | TYPE_NAME | COLUMN_SIZE | BUFFER_LENGTH | DECIMAL_DIGI |
++-----------+-------------+-----------------------------+------------------------------------+-----------+-----------+-------------+---------------+--------------+
+| IGNITE    | SYS         | BASELINE_NODES              | CONSISTENT_ID                      | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | BASELINE_NODES              | ONLINE                             | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | BASELINE_NODE_ATTRIBUTES    | NODE_CONSISTENT_ID                 | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | BASELINE_NODE_ATTRIBUTES    | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | BASELINE_NODE_ATTRIBUTES    | VALUE                              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | BINARY_METADATA             | TYPE_ID                            | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | BINARY_METADATA             | TYPE_NAME                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | BINARY_METADATA             | AFF_KEY_FIELD_NAME                 | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | BINARY_METADATA             | FIELDS_COUNT                       | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | BINARY_METADATA             | FIELDS                             | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | BINARY_METADATA             | SCHEMAS_IDS                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | BINARY_METADATA             | IS_ENUM                            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | CACHE_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | CACHE_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | CACHE_TYPE                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | CACHE_MODE                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | ATOMICITY_MODE                     | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | CACHE_GROUP_NAME                   | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | AFFINITY                           | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | AFFINITY_MAPPER                    | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | BACKUPS                            | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | CACHE_GROUP_ID                     | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | CACHE_LOADER_FACTORY               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | CACHE_STORE_FACTORY                | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | CACHE_WRITER_FACTORY               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | DATA_REGION_NAME                   | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | DEFAULT_LOCK_TIMEOUT               | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | EVICTION_FILTER                    | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | EVICTION_POLICY_FACTORY            | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | EXPIRY_POLICY_FACTORY              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | INTERCEPTOR                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_COPY_ON_READ                    | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_EAGER_TTL                       | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_ENCRYPTION_ENABLED              | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_EVENTS_DISABLED                 | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_INVALIDATE                      | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_LOAD_PREVIOUS_VALUE             | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_MANAGEMENT_ENABLED              | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_NEAR_CACHE_ENABLED              | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_ONHEAP_CACHE_ENABLED            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_READ_FROM_BACKUP                | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_READ_THROUGH                    | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_SQL_ESCAPE_ALL                  | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_SQL_ONHEAP_CACHE_ENABLED        | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_STATISTICS_ENABLED              | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_STORE_KEEP_BINARY               | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_WRITE_BEHIND_ENABLED            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | IS_WRITE_THROUGH                   | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | MAX_CONCURRENT_ASYNC_OPERATIONS    | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | MAX_QUERY_ITERATORS_COUNT          | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | NEAR_CACHE_EVICTION_POLICY_FACTORY | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | NEAR_CACHE_START_SIZE              | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | NODE_FILTER                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | PARTITION_LOSS_POLICY              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | QUERY_DETAIL_METRICS_SIZE          | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | QUERY_PARALLELISM                  | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | REBALANCE_BATCH_SIZE               | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | REBALANCE_BATCHES_PREFETCH_COUNT   | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | REBALANCE_DELAY                    | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | REBALANCE_MODE                     | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | REBALANCE_ORDER                    | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | REBALANCE_THROTTLE                 | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | REBALANCE_TIMEOUT                  | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | SQL_INDEX_MAX_INLINE_SIZE          | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | SQL_ONHEAP_CACHE_MAX_SIZE          | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | SQL_SCHEMA                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | TOPOLOGY_VALIDATOR                 | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | WRITE_BEHIND_BATCH_SIZE            | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | WRITE_BEHIND_COALESCING            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | WRITE_BEHIND_FLUSH_FREQUENCY       | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | WRITE_BEHIND_FLUSH_SIZE            | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | WRITE_BEHIND_FLUSH_THREAD_COUNT    | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHES                      | WRITE_SYNCHRONIZATION_MODE         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | CACHE_GROUP_NAME                   | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | CACHE_COUNT                        | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | DATA_REGION_NAME                   | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | CACHE_MODE                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | ATOMICITY_MODE                     | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | AFFINITY                           | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | BACKUPS                            | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | CACHE_GROUP_ID                     | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | IS_SHARED                          | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | NODE_FILTER                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | PARTITION_LOSS_POLICY              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | PARTITIONS_COUNT                   | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | REBALANCE_DELAY                    | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | REBALANCE_MODE                     | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | REBALANCE_ORDER                    | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUPS                | TOPOLOGY_VALIDATOR                 | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUP_PAGE_LISTS      | CACHE_GROUP_ID                     | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUP_PAGE_LISTS      | PARTITION_ID                       | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUP_PAGE_LISTS      | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUP_PAGE_LISTS      | BUCKET_NUMBER                      | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUP_PAGE_LISTS      | BUCKET_SIZE                        | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUP_PAGE_LISTS      | STRIPES_COUNT                      | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CACHE_GROUP_PAGE_LISTS      | CACHED_PAGES_COUNT                 | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CLIENT_CONNECTIONS          | CONNECTION_ID                      | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | CLIENT_CONNECTIONS          | LOCAL_ADDRESS                      | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CLIENT_CONNECTIONS          | REMOTE_ADDRESS                     | 12        | VARCHAR   | 2147483647  | null          | 0            |
++-----------+-------------+-----------------------------+------------------------------------+-----------+-----------+-------------+---------------+--------------+
+| TABLE_CAT | TABLE_SCHEM |         TABLE_NAME          |            COLUMN_NAME             | DATA_TYPE | TYPE_NAME | COLUMN_SIZE | BUFFER_LENGTH | DECIMAL_DIGI |
++-----------+-------------+-----------------------------+------------------------------------+-----------+-----------+-------------+---------------+--------------+
+| IGNITE    | SYS         | CLIENT_CONNECTIONS          | TYPE                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CLIENT_CONNECTIONS          | USER                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CLIENT_CONNECTIONS          | VERSION                            | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | CACHE_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | LOCAL_LISTENER                     | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | REMOTE_FILTER                      | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | REMOTE_TRANSFORMER                 | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | LOCAL_TRANSFORMED_LISTENER         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | LAST_SEND_TIME                     | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | AUTO_UNSUBSCRIBE                   | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | BUFFER_SIZE                        | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | DELAYED_REGISTER                   | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | INTERVAL                           | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | IS_EVENTS                          | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | IS_MESSAGING                       | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | IS_QUERY                           | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | KEEP_BINARY                        | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | NODE_ID                            | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | NOTIFY_EXISTING                    | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | OLD_VALUE_REQUIRED                 | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | ROUTINE_ID                         | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | CONTINUOUS_QUERIES          | TOPIC                              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DATASTREAM_THREADPOOL_QUEUE | STRIPE_INDEX                       | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DATASTREAM_THREADPOOL_QUEUE | DESCRIPTION                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DATASTREAM_THREADPOOL_QUEUE | THREAD_NAME                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DATASTREAM_THREADPOOL_QUEUE | TASK_NAME                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DATA_REGION_PAGE_LISTS      | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DATA_REGION_PAGE_LISTS      | BUCKET_NUMBER                      | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DATA_REGION_PAGE_LISTS      | BUCKET_SIZE                        | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | DATA_REGION_PAGE_LISTS      | STRIPES_COUNT                      | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DATA_REGION_PAGE_LISTS      | CACHED_PAGES_COUNT                 | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DISTRIBUTED_METASTORAGE     | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DISTRIBUTED_METASTORAGE     | VALUE                              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICLONGS              | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICLONGS              | VALUE                              | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICLONGS              | GROUP_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICLONGS              | GROUP_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICLONGS              | REMOVED                            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICREFERENCES         | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICREFERENCES         | VALUE                              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICREFERENCES         | GROUP_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICREFERENCES         | GROUP_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICREFERENCES         | REMOVED                            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICSEQUENCES          | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICSEQUENCES          | VALUE                              | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICSEQUENCES          | BATCH_SIZE                         | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICSEQUENCES          | GROUP_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICSEQUENCES          | GROUP_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICSEQUENCES          | REMOVED                            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICSTAMPED            | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICSTAMPED            | VALUE                              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICSTAMPED            | STAMP                              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICSTAMPED            | GROUP_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICSTAMPED            | GROUP_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_ATOMICSTAMPED            | REMOVED                            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_COUNTDOWNLATCHES         | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_COUNTDOWNLATCHES         | COUNT                              | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_COUNTDOWNLATCHES         | INITIAL_COUNT                      | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_COUNTDOWNLATCHES         | AUTO_DELETE                        | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_COUNTDOWNLATCHES         | GROUP_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_COUNTDOWNLATCHES         | GROUP_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_COUNTDOWNLATCHES         | REMOVED                            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_QUEUES                   | ID                                 | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_QUEUES                   | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_QUEUES                   | CAPACITY                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_QUEUES                   | SIZE                               | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_QUEUES                   | GROUP_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_QUEUES                   | GROUP_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_QUEUES                   | BOUNDED                            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_QUEUES                   | COLLOCATED                         | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_QUEUES                   | REMOVED                            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_REENTRANTLOCKS           | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_REENTRANTLOCKS           | LOCKED                             | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_REENTRANTLOCKS           | HAS_QUEUED_THREADS                 | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_REENTRANTLOCKS           | FAILOVER_SAFE                      | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_REENTRANTLOCKS           | FAIR                               | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_REENTRANTLOCKS           | BROKEN                             | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_REENTRANTLOCKS           | GROUP_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_REENTRANTLOCKS           | GROUP_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_REENTRANTLOCKS           | REMOVED                            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_SEMAPHORES               | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_SEMAPHORES               | AVAILABLE_PERMITS                  | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | DS_SEMAPHORES               | HAS_QUEUED_THREADS                 | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_SEMAPHORES               | QUEUE_LENGTH                       | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_SEMAPHORES               | FAILOVER_SAFE                      | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_SEMAPHORES               | BROKEN                             | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_SEMAPHORES               | GROUP_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_SEMAPHORES               | GROUP_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_SEMAPHORES               | REMOVED                            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_SETS                     | ID                                 | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_SETS                     | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_SETS                     | SIZE                               | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_SETS                     | GROUP_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | DS_SETS                     | GROUP_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | DS_SETS                     | COLLOCATED                         | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | DS_SETS                     | REMOVED                            | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | INDEXES                     | CACHE_GROUP_ID                     | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | INDEXES                     | CACHE_GROUP_NAME                   | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | INDEXES                     | CACHE_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | INDEXES                     | CACHE_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
++-----------+-------------+-----------------------------+------------------------------------+-----------+-----------+-------------+---------------+--------------+
+| TABLE_CAT | TABLE_SCHEM |         TABLE_NAME          |            COLUMN_NAME             | DATA_TYPE | TYPE_NAME | COLUMN_SIZE | BUFFER_LENGTH | DECIMAL_DIGI |
++-----------+-------------+-----------------------------+------------------------------------+-----------+-----------+-------------+---------------+--------------+
+| IGNITE    | SYS         | INDEXES                     | SCHEMA_NAME                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | INDEXES                     | TABLE_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | INDEXES                     | INDEX_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | INDEXES                     | INDEX_TYPE                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | INDEXES                     | COLUMNS                            | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | INDEXES                     | IS_PK                              | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | INDEXES                     | IS_UNIQUE                          | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | INDEXES                     | INLINE_SIZE                        | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | ID                                 | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | SESSION_ID                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | ORIGIN_NODE_ID                     | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | TASK_NAME                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | TASK_CLASS_NAME                    | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | AFFINITY_CACHE_IDS                 | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | AFFINITY_PARTITION_ID              | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | CREATE_TIME                        | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | START_TIME                         | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | FINISH_TIME                        | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | EXECUTOR_NAME                      | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | IS_FINISHING                       | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | IS_INTERNAL                        | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | IS_STARTED                         | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | IS_TIMED_OUT                       | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | JOBS                        | STATE                              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | LOCAL_CACHE_GROUPS_IO       | CACHE_GROUP_ID                     | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | LOCAL_CACHE_GROUPS_IO       | CACHE_GROUP_NAME                   | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | LOCAL_CACHE_GROUPS_IO       | PHYSICAL_READS                     | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | LOCAL_CACHE_GROUPS_IO       | LOGICAL_READS                      | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | METRICS                     | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | METRICS                     | VALUE                              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | METRICS                     | DESCRIPTION                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | NODES                       | NODE_ID                            | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | NODES                       | CONSISTENT_ID                      | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | NODES                       | VERSION                            | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | NODES                       | IS_CLIENT                          | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | NODES                       | IS_DAEMON                          | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | NODES                       | NODE_ORDER                         | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODES                       | ADDRESSES                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | NODES                       | HOSTNAMES                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | NODES                       | IS_LOCAL                           | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | NODE_ATTRIBUTES             | NODE_ID                            | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | NODE_ATTRIBUTES             | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | NODE_ATTRIBUTES             | VALUE                              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | NODE_ID                            | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | LAST_UPDATE_TIME                   | 93        | TIMESTAMP | 26          | null          | 6            |
+| IGNITE    | SYS         | NODE_METRICS                | MAX_ACTIVE_JOBS                    | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | CUR_ACTIVE_JOBS                    | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | AVG_ACTIVE_JOBS                    | 6         | FLOAT     | 7           | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | MAX_WAITING_JOBS                   | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | CUR_WAITING_JOBS                   | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | AVG_WAITING_JOBS                   | 6         | FLOAT     | 7           | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | MAX_REJECTED_JOBS                  | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | CUR_REJECTED_JOBS                  | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | AVG_REJECTED_JOBS                  | 6         | FLOAT     | 7           | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | TOTAL_REJECTED_JOBS                | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | MAX_CANCELED_JOBS                  | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | CUR_CANCELED_JOBS                  | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | AVG_CANCELED_JOBS                  | 6         | FLOAT     | 7           | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | TOTAL_CANCELED_JOBS                | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | MAX_JOBS_WAIT_TIME                 | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | CUR_JOBS_WAIT_TIME                 | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | AVG_JOBS_WAIT_TIME                 | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | MAX_JOBS_EXECUTE_TIME              | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | CUR_JOBS_EXECUTE_TIME              | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | AVG_JOBS_EXECUTE_TIME              | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | TOTAL_JOBS_EXECUTE_TIME            | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | TOTAL_EXECUTED_JOBS                | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | TOTAL_EXECUTED_TASKS               | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | TOTAL_BUSY_TIME                    | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | TOTAL_IDLE_TIME                    | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | CUR_IDLE_TIME                      | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | BUSY_TIME_PERCENTAGE               | 6         | FLOAT     | 7           | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | IDLE_TIME_PERCENTAGE               | 6         | FLOAT     | 7           | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | TOTAL_CPU                          | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | CUR_CPU_LOAD                       | 8         | DOUBLE    | 17          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | AVG_CPU_LOAD                       | 8         | DOUBLE    | 17          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | CUR_GC_CPU_LOAD                    | 8         | DOUBLE    | 17          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | HEAP_MEMORY_INIT                   | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | HEAP_MEMORY_USED                   | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | HEAP_MEMORY_COMMITED               | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | HEAP_MEMORY_MAX                    | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | HEAP_MEMORY_TOTAL                  | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | NONHEAP_MEMORY_INIT                | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | NONHEAP_MEMORY_USED                | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | NONHEAP_MEMORY_COMMITED            | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | NONHEAP_MEMORY_MAX                 | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | NONHEAP_MEMORY_TOTAL               | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | UPTIME                             | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | JVM_START_TIME                     | 93        | TIMESTAMP | 26          | null          | 6            |
+| IGNITE    | SYS         | NODE_METRICS                | NODE_START_TIME                    | 93        | TIMESTAMP | 26          | null          | 6            |
+| IGNITE    | SYS         | NODE_METRICS                | LAST_DATA_VERSION                  | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | CUR_THREAD_COUNT                   | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | MAX_THREAD_COUNT                   | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | TOTAL_THREAD_COUNT                 | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | CUR_DAEMON_THREAD_COUNT            | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | SENT_MESSAGES_COUNT                | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | SENT_BYTES_COUNT                   | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | RECEIVED_MESSAGES_COUNT            | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | RECEIVED_BYTES_COUNT               | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | NODE_METRICS                | OUTBOUND_MESSAGES_QUEUE            | 4         | INTEGER   | 10          | null          | 0            |
++-----------+-------------+-----------------------------+------------------------------------+-----------+-----------+-------------+---------------+--------------+
+| TABLE_CAT | TABLE_SCHEM |         TABLE_NAME          |            COLUMN_NAME             | DATA_TYPE | TYPE_NAME | COLUMN_SIZE | BUFFER_LENGTH | DECIMAL_DIGI |
++-----------+-------------+-----------------------------+------------------------------------+-----------+-----------+-------------+---------------+--------------+
+| IGNITE    | SYS         | PARTITION_STATES            | CACHE_GROUP_ID                     | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | PARTITION_STATES            | NODE_ID                            | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | PARTITION_STATES            | PARTITION_ID                       | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | PARTITION_STATES            | STATE                              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | PARTITION_STATES            | IS_PRIMARY                         | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | ORIGIN_NODE_ID                     | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | QUERY_ID                           | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | CACHE_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | CACHE_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | CACHE_GROUP_ID                     | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | CACHE_GROUP_NAME                   | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | START_TIME                         | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | DURATION                           | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | CANCELED                           | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | FILTER                             | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | KEEP_BINARY                        | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | LOCAL                              | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | PAGE_SIZE                          | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | PARTITION                          | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | SUBJECT_ID                         | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | TASK_NAME                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | TOPOLOGY                           | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SCAN_QUERIES                | TRANSFORMER                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SCHEMAS                     | SCHEMA_NAME                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SCHEMAS                     | PREDEFINED                         | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | SERVICES                    | SERVICE_ID                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SERVICES                    | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SERVICES                    | SERVICE_CLASS                      | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SERVICES                    | CACHE_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SERVICES                    | ORIGIN_NODE_ID                     | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SERVICES                    | TOTAL_COUNT                        | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | SERVICES                    | MAX_PER_NODE_COUNT                 | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | SERVICES                    | AFFINITY_KEY                       | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SERVICES                    | NODE_FILTER                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SERVICES                    | STATICALLY_CONFIGURED              | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES                 | QUERY_ID                           | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES                 | SQL                                | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES                 | ORIGIN_NODE_ID                     | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES                 | START_TIME                         | 93        | TIMESTAMP | 26          | null          | 6            |
+| IGNITE    | SYS         | SQL_QUERIES                 | DURATION                           | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES                 | INITIATOR_ID                       | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES                 | LOCAL                              | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES                 | SCHEMA_NAME                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES_HISTORY         | SCHEMA_NAME                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES_HISTORY         | SQL                                | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES_HISTORY         | LOCAL                              | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES_HISTORY         | EXECUTIONS                         | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES_HISTORY         | FAILURES                           | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES_HISTORY         | DURATION_MIN                       | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES_HISTORY         | DURATION_MAX                       | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | SQL_QUERIES_HISTORY         | LAST_START_TIME                    | 93        | TIMESTAMP | 26          | null          | 6            |
+| IGNITE    | SYS         | STRIPED_THREADPOOL_QUEUE    | STRIPE_INDEX                       | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | STRIPED_THREADPOOL_QUEUE    | DESCRIPTION                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | STRIPED_THREADPOOL_QUEUE    | THREAD_NAME                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | STRIPED_THREADPOOL_QUEUE    | TASK_NAME                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLES                      | CACHE_GROUP_ID                     | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | TABLES                      | CACHE_GROUP_NAME                   | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLES                      | CACHE_ID                           | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | TABLES                      | CACHE_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLES                      | SCHEMA_NAME                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLES                      | TABLE_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLES                      | AFFINITY_KEY_COLUMN                | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLES                      | KEY_ALIAS                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLES                      | VALUE_ALIAS                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLES                      | KEY_TYPE_NAME                      | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLES                      | VALUE_TYPE_NAME                    | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLES                      | IS_INDEX_REBUILD_IN_PROGRESS       | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TABLE_COLUMNS               | COLUMN_NAME                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLE_COLUMNS               | TABLE_NAME                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLE_COLUMNS               | SCHEMA_NAME                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLE_COLUMNS               | AFFINITY_COLUMN                    | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TABLE_COLUMNS               | AUTO_INCREMENT                     | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TABLE_COLUMNS               | DEFAULT_VALUE                      | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TABLE_COLUMNS               | NULLABLE                           | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TABLE_COLUMNS               | PK                                 | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TABLE_COLUMNS               | PRECISION                          | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | TABLE_COLUMNS               | SCALE                              | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | TABLE_COLUMNS               | TYPE                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | ID                                 | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | SESSION_ID                         | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | TASK_NODE_ID                       | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | TASK_NAME                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | TASK_CLASS_NAME                    | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | AFFINITY_PARTITION_ID              | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | AFFINITY_CACHE_NAME                | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | START_TIME                         | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | END_TIME                           | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | EXEC_NAME                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | INTERNAL                           | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | JOB_ID                             | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TASKS                       | USER_VERSION                       | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | ORIGINATING_NODE_ID                | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | STATE                              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | XID                                | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | LABEL                              | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | START_TIME                         | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | ISOLATION                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | CONCURRENCY                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | KEYS_COUNT                         | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | CACHE_IDS                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
++-----------+-------------+-----------------------------+------------------------------------+-----------+-----------+-------------+---------------+--------------+
+| TABLE_CAT | TABLE_SCHEM |         TABLE_NAME          |            COLUMN_NAME             | DATA_TYPE | TYPE_NAME | COLUMN_SIZE | BUFFER_LENGTH | DECIMAL_DIGI |
++-----------+-------------+-----------------------------+------------------------------------+-----------+-----------+-------------+---------------+--------------+
+| IGNITE    | SYS         | TRANSACTIONS                | COLOCATED                          | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | DHT                                | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | DURATION                           | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | IMPLICIT                           | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | IMPLICIT_SINGLE                    | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | INTERNAL                           | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | LOCAL                              | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | LOCAL_NODE_ID                      | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | NEAR                               | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | ONE_PHASE_COMMIT                   | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | OTHER_NODE_ID                      | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | SUBJECT_ID                         | -2        | BINARY    | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | SYSTEM                             | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | THREAD_ID                          | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | TIMEOUT                            | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | TRANSACTIONS                | TOP_VER                            | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | VIEWS                       | NAME                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | VIEWS                       | SCHEMA                             | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | VIEWS                       | DESCRIPTION                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | VIEW_COLUMNS                | COLUMN_NAME                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | VIEW_COLUMNS                | VIEW_NAME                          | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | VIEW_COLUMNS                | SCHEMA_NAME                        | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | VIEW_COLUMNS                | DEFAULT_VALUE                      | 12        | VARCHAR   | 2147483647  | null          | 0            |
+| IGNITE    | SYS         | VIEW_COLUMNS                | NULLABLE                           | 16        | BOOLEAN   | 1           | null          | 0            |
+| IGNITE    | SYS         | VIEW_COLUMNS                | PRECISION                          | -5        | BIGINT    | 19          | null          | 0            |
+| IGNITE    | SYS         | VIEW_COLUMNS                | SCALE                              | 4         | INTEGER   | 10          | null          | 0            |
+| IGNITE    | SYS         | VIEW_COLUMNS                | TYPE                               | 12        | VARCHAR   | 2147483647  | null          | 0            |
++-----------+-------------+-----------------------------+------------------------------------+-----------+-----------+-------------+---------------+--------------+
+0: jdbc:ignite:thin://127.0.0.1/> !connect
+Property "url" is required
+0: jdbc:ignite:thin://127.0.0.1/>
+0: jdbc:ignite:thin://127.0.0.1/>
+0: jdbc:ignite:thin://127.0.0.1/> !dbinfo
+allProceduresAreCallable                          true
+allTablesAreSelectable                            true
+dataDefinitionCausesTransactionCommit             false
+dataDefinitionIgnoredInTransactions               false
+doesMaxRowSizeIncludeBlobs                        false
+getCatalogSeparator
+getCatalogTerm
+getDatabaseProductName                            Apache Ignite
+getDatabaseProductVersion                         2.11.0#20210911-sha1:8f3f07d3
+getDefaultTransactionIsolation                    4
+getDriverMajorVersion                             2
+getDriverMinorVersion                             11
+getDriverName                                     Apache Ignite Thin JDBC Driver
+getDriverVersion                                  2.11.0#20210911-sha1:8f3f07d3
+getExtraNameCharacters
+getIdentifierQuoteString                          "
+getMaxBinaryLiteralLength                         0
+getMaxCatalogNameLength                           0
+getMaxCharLiteralLength                           0
+getMaxColumnNameLength                            0
+getMaxColumnsInGroupBy                            0
+getMaxColumnsInIndex                              0
+getMaxColumnsInOrderBy                            0
+getMaxColumnsInSelect                             0
+getMaxColumnsInTable                              0
+getMaxConnections                                 0
+getMaxCursorNameLength                            0
+getMaxIndexLength                                 0
+getMaxProcedureNameLength                         0
+getMaxRowSize                                     0
+getMaxSchemaNameLength                            0
+getMaxStatementLength                             0
+getMaxStatements                                  0
+getMaxTableNameLength                             0
+getMaxTablesInSelect                              0
+getMaxUserNameLength                              0
+getNumericFunctions
+getProcedureTerm
+getSchemaTerm
+getSearchStringEscape                             \
+getSQLKeywords                                    LIMIT,MINUS,ROWNUM,SYSDATE,SYSTIME,SYSTIMESTAMP,TODAY
+getStringFunctions
+getSystemFunctions
+getTimeDateFunctions
+getURL                                            jdbc:ignite:thin://127.0.0.1:10800
+getUserName
+isCatalogAtStart                                  false
+isReadOnly                                        false
+nullPlusNonNullIsNull                             true
+nullsAreSortedAtEnd                               true
+nullsAreSortedAtStart                             false
+nullsAreSortedHigh                                false
+nullsAreSortedLow                                 true
+storesLowerCaseIdentifiers                        false
+storesLowerCaseQuotedIdentifiers                  false
+storesMixedCaseIdentifiers                        false
+storesMixedCaseQuotedIdentifiers                  true
+storesUpperCaseIdentifiers                        true
+storesUpperCaseQuotedIdentifiers                  true
+supportsAlterTableWithAddColumn                   true
+supportsAlterTableWithDropColumn                  true
+supportsANSI92EntryLevelSQL                       true
+supportsANSI92FullSQL                             false
+supportsANSI92IntermediateSQL                     false
+supportsBatchUpdates                              true
+supportsCatalogsInDataManipulation                false
+supportsCatalogsInIndexDefinitions                false
+supportsCatalogsInPrivilegeDefinitions            false
+supportsCatalogsInProcedureCalls                  false
+supportsCatalogsInTableDefinitions                false
+supportsColumnAliasing                            true
+supportsConvert                                   true
+supportsCoreSQLGrammar                            true
+supportsCorrelatedSubqueries                      true
+supportsDataDefinitionAndDataManipulationTransactionsfalse
+supportsDataManipulationTransactionsOnly          false
+supportsDifferentTableCorrelationNames            true
+supportsExpressionsInOrderBy                      true
+supportsExtendedSQLGrammar                        false
+supportsFullOuterJoins                            false
+supportsGroupBy                                   true
+supportsGroupByBeyondSelect                       true
+supportsGroupByUnrelated                          true
+supportsIntegrityEnhancementFacility              false
+supportsLikeEscapeClause                          true
+supportsLimitedOuterJoins                         true
+supportsMinimumSQLGrammar                         false
+supportsMixedCaseIdentifiers                      false
+supportsMixedCaseQuotedIdentifiers                false
+supportsMultipleResultSets                        true
+supportsMultipleTransactions                      false
+supportsNonNullableColumns                        false
+supportsOpenCursorsAcrossCommit                   false
+supportsOpenCursorsAcrossRollback                 false
+supportsOpenStatementsAcrossCommit                false
+supportsOpenStatementsAcrossRollback              false
+supportsOrderByUnrelated                          true
+supportsOuterJoins                                true
+supportsPositionedDelete                          false
+supportsPositionedUpdate                          false
+supportsSchemasInDataManipulation                 true
+supportsSchemasInIndexDefinitions                 false
+supportsSchemasInPrivilegeDefinitions             false
+supportsSchemasInProcedureCalls                   false
+supportsSchemasInTableDefinitions                 false
+supportsSelectForUpdate                           false
+supportsStoredProcedures                          false
+supportsSubqueriesInComparisons                   true
+supportsSubqueriesInExists                        true
+supportsSubqueriesInIns                           true
+supportsSubqueriesInQuantifieds                   true
+supportsTableCorrelationNames                     true
+supportsTransactions                              true
+supportsUnion                                     true
+supportsUnionAll                                  true
+usesLocalFilePerTable                             false
